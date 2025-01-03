@@ -4,6 +4,6 @@ import com.springBootJpa.springBootJPA.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface studentRepository extends JpaRepository<Student,Long> {
-    Student findByUsername(String username);
+  Student findByUsername(String username);
 
 }
