@@ -61,7 +61,7 @@ public class studentService implements UserDetailsService{
                 authService.authenticate
                         (new UsernamePasswordAuthenticationToken(student.getUsername(),student.getPassword()));
         if(authentication.isAuthenticated()){
-            return  Jwtsevice.generateToken();
+            return  Jwtsevice.generateToken(student.getUsername());
 
         }
         return "fail";
