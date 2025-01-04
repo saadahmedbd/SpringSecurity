@@ -1,10 +1,8 @@
 package com.springBootJpa.springBootJPA.controller;
 
 import com.springBootJpa.springBootJPA.model.Student;
-import com.springBootJpa.springBootJPA.repository.studentRepository;
 import com.springBootJpa.springBootJPA.service.studentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,6 +26,11 @@ public class studentController {
     public Student userRegister(@RequestBody Student student){
 //
         return StudentService.userRegister(student);
+    }
+
+    @PostMapping("/login")
+    public String userLogin(@RequestBody Student student){
+        return StudentService.verify(student);
     }
 
 }
